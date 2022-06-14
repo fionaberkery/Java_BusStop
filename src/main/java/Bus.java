@@ -20,9 +20,10 @@ public class Bus {
         return this.destination;
     }
 
-    public String addPassenger(Person person) {
+    public String addPassenger(BusStop busStop) {
         int passengersOnBus = this.passengers.size();
         if (passengersOnBus <= this.capacity) {
+            Person person = busStop.removePersonFromQueue();
             this.passengers.add(person);
         } else;
         {
